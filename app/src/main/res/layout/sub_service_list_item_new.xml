@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:ignore="UseCompoundDrawables">
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_5sdp"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/service_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/nav_header"
+            android:orientation="vertical">
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/service_image_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/imgSelect"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:visibility="visible"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/check_untick"
+                        android:layout_height="@dimen/_20sdp" />
+
+
+
+                    <com.astudent.partner.Utils.ClanProTextView
+                        android:id="@+id/service_list_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/_40sdp"
+                        android:text="@string/carpendar"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="RtlHardcoded" />
+                </RelativeLayout>
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

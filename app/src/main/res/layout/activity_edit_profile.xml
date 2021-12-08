@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.astudent.partner.Activity.EditProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:src="@drawable/back_icon"
+            android:tint="@color/white" />
+
+        <com.astudent.partner.Utils.ClanProTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="Profile"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end">
+
+            <com.astudent.partner.Utils.ClanProTextView
+                android:id="@+id/lblSave"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:gravity="center"
+                android:text="@string/edit"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:background="@color/color_bg_toolbar"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:civ_border_width="@dimen/_1sdp"
+                        android:src="@drawable/ic_dummy_user" />
+
+                    <com.astudent.partner.Utils.ClanProTextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|bottom">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!--
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />-->
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_110sdp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:elevation="@dimen/_15sdp"
+                    card_view:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/first_name"
+                                    android:textColor="@color/user_name"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+                                <com.astudent.partner.Utils.ClanProEditText
+                                    android:id="@+id/first_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@null"
+                                    android:enabled="false"
+                                    android:hint="@string/first_name"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textCapWords"
+                                    android:maxLines="1"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/last_name"
+                                    android:textColor="@color/user_name"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+                                <com.astudent.partner.Utils.ClanProEditText
+                                    android:id="@+id/last_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@null"
+                                    android:enabled="false"
+                                    android:hint="@string/last_name"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <View
+                            android:id="@+id/first_name_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@color/user_name"
+                            android:visibility="gone" />
+
+
+                        <View
+                            android:id="@+id/last_name_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@color/user_name"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/phone_number"
+                                android:textColor="@color/user_name"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                            <com.astudent.partner.Utils.ClanProEditText
+                                android:id="@+id/mobile_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@null"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="phone|number"
+                                android:digits="0123456789"
+                                android:maxLines="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/mobile_no_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@color/user_name"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/about"
+                                android:textColor="@color/user_name"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <com.astudent.partner.Utils.ClanProEditText
+                                android:id="@+id/desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@null"
+                                android:enabled="false"
+                                android:gravity="start"
+                                android:hint="@string/write_something"
+                                android:lines="2"
+                                android:maxLines="2"
+                                android:minLines="2"
+                                android:padding="@dimen/_6sdp"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.astudent.partner.Utils.ClanProTextView
+                    android:id="@+id/changePasswordTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_17sdp"
+                    android:text="Change Password"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

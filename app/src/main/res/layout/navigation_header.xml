@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_170sdp"
+    android:paddingTop="@dimen/_10sdp"
+    android:gravity="center"
+    android:background="@color/nav_header">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleView"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_alignParentTop="true"
+        android:background="@color/nav_header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:src="@drawable/ic_dummy_user" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rahul"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@+id/circleView"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

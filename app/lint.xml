@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="UnusedResources">
+        <ignore path="src/main/res/drawable-hdpi/banner.png" />
+        <ignore path="src/main/res/drawable-hdpi/box.png" />
+        <ignore path="src/main/res/drawable-hdpi/box_shadow.png" />
+        <ignore path="src/main/res/drawable-hdpi/close.png" />
+        <ignore path="src/main/res/drawable-hdpi/next_icon.png" />
+        <ignore path="src/main/res/drawable-hdpi/reject.png" />
+        <ignore path="src/main/res/drawable-hdpi/round.png" />
+        <ignore path="src/main/res/drawable-mdpi/box.png" />
+        <ignore path="src/main/res/drawable-xhdpi/box.png" />
+        <ignore path="src/main/res/drawable-xhdpi/info_icon_72.png" />
+        <ignore path="src/main/res/drawable-xhdpi/reject.png" />
+        <ignore path="src/main/res/drawable-xxhdpi/box.png" />
+        <ignore path="src/main/res/drawable-xxhdpi/reject.png" />
+    </issue>
+</lint>

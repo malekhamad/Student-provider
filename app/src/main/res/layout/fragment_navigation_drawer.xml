@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/navigation_header"
+                layout="@layout/navigation_header" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/imgprofile_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/profile2"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/home_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/menu_home"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/history_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/menu_history"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/earnings_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/earnings"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/language_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/language"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/summary_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/summary"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/help_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/help"
+                android:visibility="gone"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/sub_settings_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/menu_payment"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/city_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/about_us"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/legal_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/legal"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/revolution_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/contact_us"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/contact_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/menu_share_to_contact"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/share_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_22sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/menu_share"
+                android:visibility="gone"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <com.astudent.partner.Utils.ClanProButton
+                android:id="@+id/logout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nav_btn_selector"
+                android:drawablePadding="@dimen/_20sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/menu_logout"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_color"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

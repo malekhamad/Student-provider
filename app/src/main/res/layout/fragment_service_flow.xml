@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <!-- Map Layout ...-->
+        <LinearLayout
+            android:id="@+id/lnrMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/provider_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/offline_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:background="@color/light_trans"
+            android:orientation="horizontal"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/offline_img"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_230sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo"
+            android:visibility="gone" />
+
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            >
+
+            <ImageView
+                android:id="@+id/back_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:src="@drawable/ic_back"
+                android:visibility="invisible" />
+
+            <com.astudent.partner.Utils.ArialBlackTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:layout_toRightOf="@+id/back_img"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgZoomService"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="@dimen/_50sdp"
+            android:src="@drawable/no_image"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_nav_menu"
+            android:tint="@color/btn_color"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_52sdp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_alignParentRight="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/current_loc"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/destinationLayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@color/white"
+            android:elevation="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:ignore="RtlHardcoded">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.astudent.partner.Utils.ClanProTextView
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:lineSpacingMultiplier="1.2"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:text="@string/service_address"
+                    android:textColor="@color/btn_color"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold" />
+
+                <com.astudent.partner.Utils.ClanProTextView
+                    android:id="@+id/txtServiceAddress"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:hint="Where to?"
+                    android:lineSpacingMultiplier="1.2"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/btn_color"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:alpha=".20"
+                android:background="@color/black"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/imgNavigationToSource"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/nav_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/rytCurrent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgGotoPhoto"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_gravity="start"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/service_camera"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:gravity="end">
+
+
+                    <ImageView
+                        android:id="@+id/imgCurrentLocation"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:contentDescription="@string/app_name"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/current_loc" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <!--Go Offline/Online-->
+                <LinearLayout
+                    android:id="@+id/lnrGoOffline"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.astudent.partner.Utils.ClanProButton
+                        android:id="@+id/btnGoOffline"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:background="@drawable/button_corner_black"
+                        android:elevation="@dimen/_10sdp"
+                        android:text="@string/go_offline"
+                        android:textColor="@color/btn_text_color"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+                <!--2. Service Flow ...-->
+                <LinearLayout
+                    android:id="@+id/lnrServiceFlow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/lnrProviderAccepted"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            card_view:cardElevation="@dimen/_5sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:orientation="horizontal">
+
+                                <!--Cancel Trip fun-->
+
+                                <LinearLayout
+                                    android:id="@+id/lnrCancelTrip"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                    <ImageView
+                                        android:id="@+id/imgCancelTrip"
+                                        android:layout_width="@dimen/_35sdp"
+                                        android:layout_height="@dimen/_35sdp"
+                                        android:src="@drawable/cancel_req_icon" />
+
+                                    <com.astudent.partner.Utils.ClanProTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:text="Cancel Session"
+                                        android:textColor="@color/btn_color"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <!--Time Consumed fun-->
+
+                                <LinearLayout
+                                    android:id="@+id/lnrWorkStatus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <FrameLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <ImageView
+                                                android:layout_width="@dimen/_35sdp"
+                                                android:layout_height="@dimen/_35sdp"
+                                                android:src="@drawable/circle_bg" />
+
+                                            <Chronometer
+                                                android:id="@+id/lblTimerText"
+                                                android:layout_width="@dimen/_35sdp"
+                                                android:layout_height="@dimen/_35sdp"
+                                                android:layout_gravity="center"
+                                                android:digits="00:00"
+                                                android:gravity="center"
+                                                android:textColor="@color/white"
+                                                android:textSize="@dimen/_9sdp"
+                                                android:textStyle="bold" />
+                                        </FrameLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center">
+
+                                        <com.astudent.partner.Utils.ClanProTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/_3sdp"
+                                            android:gravity="center"
+                                            android:text="@string/time_consumed"
+                                            android:textColor="@color/btn_color"
+                                            android:textSize="@dimen/_12sdp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <!--Profile fun-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/imgUser02"
+                                        android:layout_width="@dimen/_60sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:background="@android:color/white"
+                                        android:src="@drawable/ic_dummy_user"
+                                        app:civ_border_color="@color/btn_color"
+                                        app:civ_border_width="2dp" />
+
+                                    <com.astudent.partner.Utils.ClanProTextView
+                                        android:id="@+id/txtUserName02"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:gravity="center"
+                                        android:text="dadaasdsdasdas"
+                                        android:maxLength="12"
+                                        android:maxLines="1"
+                                        android:ellipsize="end"
+                                        android:textColor="@color/btn_color"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+
+                                    <com.astudent.partner.Utils.ClanProTextView
+                                        android:id="@+id/lblServiceRequested"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:textColor="@color/btn_color"
+                                        android:textSize="@dimen/_13sdp"
+                                        android:visibility="gone" />
+
+                                    <RatingBar
+                                        android:id="@+id/ratingUser02"
+                                        style="?attr/ratingBarStyleSmall"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:isIndicator="true"
+                                        android:numStars="5"
+                                        android:progressTint="#FFCA28"
+                                        android:rating="3" />
+
+
+                                </LinearLayout>
+
+                                <!--call fun-->
+                                <LinearLayout
+                                    android:id="@+id/lnrCall"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgChat"
+                                        android:layout_width="@dimen/_35sdp"
+                                        android:layout_height="@dimen/_35sdp"
+                                        android:src="@drawable/help_call" />
+
+                                    <com.astudent.partner.Utils.ClanProTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:text="Call"
+                                        android:textColor="@color/btn_color"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <com.astudent.partner.Utils.ClanProButton
+                            android:id="@+id/btnStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/button_corner_black"
+                            android:elevation="@dimen/_3sdp"
+                            android:text="@string/tap_when_arrived"
+                            android:textColor="@color/btn_text_color"
+                            android:textSize="@dimen/_13sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--3. Invoice ...-->
+                <LinearLayout
+                    android:id="@+id/lnrInvoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/btn_text_color"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <!--Time Consumed fun-->
+
+                        <LinearLayout
+                            android:id="@+id/lnrWorkStatus1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_35sdp"
+                                        android:layout_height="@dimen/_35sdp"
+                                        android:src="@drawable/circle_bg" />
+
+                                    <com.astudent.partner.Utils.ClanProTextView
+                                        android:id="@+id/lblTimerText1"
+                                        android:layout_width="@dimen/_35sdp"
+                                        android:layout_height="@dimen/_35sdp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_9sdp"
+                                        android:textStyle="bold" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:gravity="center"
+                                    android:text="@string/time_consumed"
+                                    android:textColor="@color/btn_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--Profile fun-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgUser03"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_70sdp"
+                                android:background="@android:color/white"
+                                android:src="@drawable/ic_dummy_user"
+                                app:civ_border_color="@color/btn_color"
+                                app:civ_border_width="2dp" />
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:id="@+id/txtUserName03"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:text="dbsanmda"
+                                android:textColor="@color/btn_color"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+
+
+                            <RatingBar
+                                android:id="@+id/ratingUser03"
+                                style="?attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="#FFCA28"
+                                android:rating="3" />
+
+
+                        </LinearLayout>
+
+                        <!--call fun-->
+                        <LinearLayout
+                            android:id="@+id/lnrCall1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgCall1"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:src="@drawable/help_call" />
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:text="@string/call"
+                                android:textColor="@color/btn_color"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@color/nav_header" />
+
+                    <LinearLayout
+                        android:id="@+id/lnrInvoiceSub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <com.astudent.partner.Utils.ClanProTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/invoice"
+                            android:textColor="@color/btn_color"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="normal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/base_fare"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblBasePrice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="@string/sample_base_price"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/tax_fare"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblTaxFare"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="@string/sample_base_price"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/hourly_fare"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblHourlyFareInvoice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="@string/sample_base_price"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/promotion_applied"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblPromotionApplied"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="@string/sample_base_price"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/wallet_detection"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblWalletDetection"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="@string/sample_base_price"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_13sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:text="@string/total"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_16sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblTotal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="@string/sample_base_price"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/_16sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:gravity="start"
+                                android:text="@string/total"
+                                android:textColor="@color/btn_color"
+                                android:textSize="@dimen/_13sdp" />
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:id="@+id/lblAmountPaid"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:text="@string/sample_base_price"
+                                android:textColor="@color/btn_color"
+                                android:textSize="@dimen/_13sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:id="@+id/text_payable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/payable_amount"
+                                android:textColor="@color/btn_color"
+                                android:textSize="@dimen/_18sdp" />
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:id="@+id/text_payable_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:gravity="end"
+                                android:text="@string/sample_base_price"
+                                android:textColor="@color/btn_color"
+                                android:textSize="@dimen/_18sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgPaymentTypeInvoice"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                app:srcCompat="@drawable/money" />
+
+                            <com.astudent.partner.Utils.ClanProTextView
+                                android:id="@+id/lblPaymentTypeInvoice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:text="@string/selected_payment_mode"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/_13sdp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <com.astudent.partner.Utils.ClanProButton
+                        android:id="@+id/btnPayNow"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_button"
+                        android:elevation="@dimen/_10sdp"
+                        android:text="@string/pay_now"
+                        android:textColor="@color/btn_text_color"
+                        android:textSize="@dimen/_13sdp"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <!--4. Rate your user ...-->
+                <LinearLayout
+                    android:id="@+id/lnrRateProvider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/nav_header"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imgProviderRate"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/nav_header"
+                            android:src="@drawable/ic_dummy_user"
+                            app:civ_border_color="@color/btn_color"
+                            app:civ_border_width="@dimen/_2sdp" />
+
+                        <com.astudent.partner.Utils.ClanProTextView
+                            android:id="@+id/lblProviderNameRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_horizontal"
+                            android:text="Mathew"
+                            android:textColor="@color/btn_color"
+                            android:textSize="@dimen/_13sdp" />
+
+                        <RatingBar
+                            android:id="@+id/ratingProviderRate"
+                            style="?attr/ratingBarStyleIndicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:isIndicator="false"
+                            android:numStars="5"
+                            android:progressTint="@color/dustYellow"
+                            android:rating="1"
+                            android:stepSize="1" />
+
+                        <com.astudent.partner.Utils.ClanProEditText
+                            android:id="@+id/txtComments"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@android:color/white"
+                            android:gravity="top"
+                            android:hint="@string/write_your_comment"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapSentences"
+                            android:padding="@dimen/_5sdp"
+                            android:text=""
+                            android:textColor="@color/btn_color"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+
+                    <com.astudent.partner.Utils.ClanProButton
+                        android:id="@+id/btnSubmitReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_button"
+                        android:elevation="@dimen/_10sdp"
+                        android:text="@string/rate_user"
+                        android:textColor="@color/btn_text_color"
+                        android:textSize="@dimen/_13sdp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Service photo-->
+        <LinearLayout
+            android:id="@+id/lnrServicePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/nav_header"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/cancel_ride_color"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        android:background="@color/btn_color">
+
+                        <ImageView
+                            android:id="@+id/backArrow"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:padding="5dp"
+                            android:src="@drawable/back_icon"
+                            android:tint="@color/white" />
+
+                        <com.astudent.partner.Utils.ClanProTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Service Image"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/nav_header"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:elevation="@dimen/_13sdp">
+
+                            <LinearLayout
+                                android:id="@+id/lnrBeforeService"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp"
+                                android:visibility="visible">
+
+
+                                <ImageView
+                                    android:id="@+id/imgBeforeComments"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginRight="@dimen/_20sdp"
+                                    android:tint="@color/btn_color"
+                                    android:visibility="gone" />
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/imgBeforeService"
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/white"
+                                    android:src="@drawable/no_image"
+                                    tools:ignore="ContentDescription" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblBeforeService"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:text="@string/before_service"
+                                    android:textSize="@dimen/_16sdp"
+                                    android:visibility="visible" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblBeforeTxtComment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_14sdp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:elevation="@dimen/_13sdp">
+
+                            <LinearLayout
+                                android:id="@+id/lnrAfterService"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+
+                                <ImageView
+                                    android:id="@+id/imgAfterComments"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginRight="@dimen/_20sdp"
+                                    android:tint="@color/btn_color"
+                                    android:visibility="gone" />
+
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/imgAfterService"
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/white"
+                                    android:src="@drawable/no_image"
+                                    tools:ignore="ContentDescription" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblAfterService"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:text="@string/after_service"
+                                    android:textSize="@dimen/_16sdp"
+                                    android:visibility="visible" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblAfterTxtComment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_6sdp"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_14sdp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <com.astudent.partner.Utils.ClanProEditText
+                            android:id="@+id/txtServiceComments"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/review_bg"
+                            android:hint="@string/write_your_comment"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_12sdp"
+                            android:visibility="visible" />
+
+                        <com.astudent.partner.Utils.ClanProButton
+                            android:id="@+id/btnServiceStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:elevation="@dimen/_10sdp"
+                            android:text="@string/save_after"
+                            android:textColor="@color/btn_text_color"
+                            android:textSize="@dimen/_14sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+
+        <!--1. accept or Reject ...-->
+        <LinearLayout
+            android:id="@+id/lnrAcceptOrReject"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/high_trans"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.astudent.partner.Utils.ClanProTextView
+                android:id="@+id/txtTimer"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/circle_bg"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgUser01"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/ic_dummy_user" />
+
+
+                <com.astudent.partner.Utils.ClanProTextView
+                    android:id="@+id/txtUserName01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:text="User"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+                <RatingBar
+                    android:id="@+id/ratingUser01"
+                    style="?attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="#FFCA28"
+                    android:rating="1" />
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/service_type" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblServiceType"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="@string/service_type"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/txtScheduleType"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Electrician"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_subservice" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="@string/sub_service_type"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/txtSubServiceType"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lnrSchedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/schedule_icon" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblScheduleDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="@string/schedule_date"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/txtSchedule"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="start|center"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="12/06/2017 at 9:13PM"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/description_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_subservice" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="@string/desc"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/txtDesc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/location_icon" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/lblServiceAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="@string/service_location"
+                                    android:textColor="@color/cancel_ride_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <com.astudent.partner.Utils.ClanProTextView
+                                    android:id="@+id/txtScheduleAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="start|center"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Christian church opposite, St.Thomas road, Newyork "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <com.astudent.partner.Utils.ClanProButton
+                        android:id="@+id/btnReject"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:background="@drawable/cancel_req_icon"
+                        android:elevation="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <com.astudent.partner.Utils.ClanProTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/reject"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <com.astudent.partner.Utils.ClanProButton
+                        android:id="@+id/btnAccept"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginLeft="@dimen/_25sdp"
+                        android:background="@drawable/accept"
+                        android:elevation="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <com.astudent.partner.Utils.ClanProTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:text="@string/accept"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

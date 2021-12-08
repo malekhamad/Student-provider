@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#E89768</color>
+    <color name="colorPrimaryDark">#E89768</color>
+    <color name="colorAccent">#000000</color>
+
+
+    <color name="tv_normal_color">#000000</color>
+    <color name="nav_bg_color" tools:ignore="UnusedResources">#2B303D</color>
+    <color name="nav_bar_color" tools:ignore="UnusedResources">#05050d</color>
+    <color name="tv_color">#000000</color>
+    <color name="bg_et_color" tools:ignore="UnusedResources">#FFF6F6F6</color>
+    <color name="bottom_sheet_bg_color" tools:ignore="UnusedResources">#FFFFFF</color>
+    <color name="color_bg_toolbar">#E89768</color>
+
+    <!--Signin-->
+    <color name="btn_color">#E89768</color>
+    <color name="color_bg_sign_up">#E89768</color>
+    <color name="btn_text_color">#FFFFFF</color>
+    <color name="bg_signin_color" tools:ignore="UnusedResources">#FF2C323E</color>
+    <color name="bg_layout_color" tools:ignore="UnusedResources">#FFFFFF</color>
+    <color name="light_white" tools:ignore="UnusedResources">#F7F7F7</color>
+    <color name="chat_text">#9FA5B2</color>
+    <color name="black">#000000</color>
+    <color name="mild_black" tools:ignore="UnusedResources">#767171</color>
+    <color name="white">#FFFFFF</color>
+    <color name="view_not_chat" tools:ignore="UnusedResources">#EC6B76</color>
+    <color name="view_chat" tools:ignore="UnusedResources">#000000</color>
+    <color name="offline">#D2D2D2</color>
+    <color name="transparent" tools:ignore="UnusedResources">#FFFFFFFF</color>
+    <color name="edit_bg" tools:ignore="UnusedResources">#EDEDED</color>
+    <color name="light_trans">#70000000</color>
+    <color name="high_trans">#CC000000</color>
+    <color name="accept_reject_color" tools:ignore="UnusedResources">#BEBEBE</color>
+    <color name="accept_reject_header_color" tools:ignore="UnusedResources">#6F6F6F</color>
+
+    <!--Service List-->
+    <color name="text_bg_trans_color" tools:ignore="UnusedResources">#aa2c323e</color>
+    <color name="dustYellow">#ffd700</color>
+
+    <!--Spot Dialog Dot Color-->
+    <color name="spots_dialog_color" tools:ignore="UnusedResources">@color/tv_color</color>
+
+    <color name="nav_header">#f6f6f6</color>
+
+    <!--SignIn-->
+
+    <color name="cancel_ride_color">#B0B0B0</color>
+    <color name="rippel_color">#6DCFF6</color>
+
+
+    <color name="user_name">#434343</color>
+
+    <color name="red">#f44236</color>
+    <color name="blue">#3e70c9</color>
+    <color name="green">#43b968</color>
+    <color name="orange">#f59345</color>
+    <color name="trans_Primary">#5038917D</color>
+
+    <color name="default_bubble_color_rcv">@color/black</color>
+    <color name="default_bubble_color_send">@color/white</color>
+
+    <color name="default_message_color_rcv">@color/white</color>
+    <color name="default_message_color_send">@color/black</color>
+    <color name="main_color_gray">#7d7d7d</color>
+</resources>

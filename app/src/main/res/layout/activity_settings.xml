@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nav_header"
+    tools:context=".Activity.SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:padding="@dimen/_16sdp"
+            android:text="@string/choose_language"
+            android:textColor="@color/user_name"
+            android:textSize="@dimen/_14sdp" />
+
+        <RadioGroup
+            android:id="@+id/choose_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp">
+
+            <RadioButton
+                android:id="@+id/english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:ellipsize="end"
+                android:padding="12dp"
+                android:singleLine="true"
+                android:text="@string/english"
+                android:textSize="@dimen/_12sdp" />
+
+            <RadioButton
+                android:id="@+id/arabic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:padding="12dp"
+                android:singleLine="true"
+                android:text="@string/arabic"
+                android:textSize="@dimen/_12sdp" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE
+    resources
+    [<!ENTITY appname "A Student (Tutors) "><!ENTITY provider "A Student"><!ENTITY providers "A Student"><!ENTITY service "Subject"><!ENTITY services "Subjects"><!ENTITY servicecap "SUBJECTS"><!ENTITY user "User">]>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!--Application Name-->
+    <string name="app_name">&appname;</string>
+
+    <!--Google map-->
+    <string name="google_map_api"> AIzaSyAlPnLKA7wxbZXaSUUCncI8QZb-iAKc7C4 </string>
+    <string name="facebook_app_id" translatable="false"> 257584141974462 </string>
+    <string name="fb_login_protocol_scheme"> fb257584141974462 </string>
+
+    <string name="fb_cancel">Facebook تم إلغاء تسجيل الدخول إلى </string>
+    <string name="fb_error">Facebook فشل تسجيل الدخول إلى</string>
+
+    <string name="facebook_name"> Facebook </string>
+
+    <!--Flow status -->
+    <string name="tap_when_arrived"> انقر عند الوصول</string>
+    <string name="tap_when_pickedup"> تسجيل الوصول</string>
+    <string name="tap_when_dropped"> تسجيل خروج</string>
+    <string name="tap_when_paid"> تأكيد الدفع</string>
+    <string name="cancel_ride" tools:ignore="UnusedResources"> إلغاء الطلب</string>
+    <string name="rate_user"> إرسال</string>
+
+    <!--Invoice-->
+    <string name="invoice"> فاتورة</string>
+    <string name="base_fare"> السعر الأساسي</string>
+    <string name="tax_fare"> أجرة الضريبة</string>
+    <string name="hourly_fare"> الأجرة بالساعة</string>
+    <string name="cities"> المدن</string>
+    <string name="legal"> قانوني</string>
+    <string name="revolution"> انضم إلى ثورة الوظائف</string>
+    <string name="wallet_detection">  التحقق من المحفظة</string>
+    <string name="promotion_applied"> العمولة</string>
+    <string name="total"> الإجمالي</string>
+    <string name="payable_amount"> المبلغ الواجب دفعه</string>
+    <string name="amount_to_be_paid"> المبلغ الواجب دفعه</string>
+    <string name="sample_base_price">$0</string>
+    <string name="time_consumed"> الوقت Time\nconsumed</string>
+    <string name="service_photo" tools:ignore="UnusedResources">&service; الصور</string>
+    <string name="selected_payment_mode">النقدية</string>
+    <string name="pay_now"> تأكيد الدفع</string>
+    <string name="payment_methods" tools:ignore="UnusedResources"> طرق الدفع</string>
+    <string name="write_your_comment"> اكتب تعليقاتك</string>
+    <string name="no_comments"> لا توجد تعليقات متوفرة</string>
+    <string name="rate_provider" tools:ignore="UnusedResources">مع &service; قيم الخدمة</string>
+    <string name="start_service"> &service;قم برفع وبدء الخدمة </string>
+    <string name="end_service"> تحميل وإنهاء &amp; خدمة؛ </string>
+    <string name="services_requested">&services; تم طلب الخدمة</string>
+    <string name="profile"> الملف الشخصي</string>
+
+    <!--Offline Online -->
+    <string name="go_online"> الانتقال الى وضع متصل</string>
+    <string name="go_offline"> الانتقال إلى وضع غير متصل</string>
+
+    <!-- Error Messages-->
+    <string name="something_went_wrong"> حدث خطأ ما.</string>
+    <string name="services_updated">&services; تم تحديث الخدمة بنجاح</string>
+    <string name="something_went_wrong_net"> حدث خطأ ما ، يرجى التحقق من الاتصال بالإنترنت.</string>
+    <string name="oops_connect_your_internet"> عفوًا! قم بتوصيل الإنترنت الخاص بك.</string>
+    <string name="server_down"> غير قادر على الوصول إلى الخادم.</string>
+    <string name="please_try_again"> يرجى المحاولة مرة أخرى.</string>
+    <string name="email_validation"> أدخل بريدك الإلكتروني.</string>
+    <string name="not_valid_email" tools:ignore="UnusedResources"> ليس بريدًا إلكترونيًا صالحًا.</string>
+    <string name="password_validation"> لا يمكن ترك كلمة المرور فارغة.</string>
+    <string name="password_validation2"> يجب أن تحتوي كلمة المرور على الأقل على حرف كبير واحد وحرف صغير واحد ورقم واحد ورمز خاص واحد</string>
+    <string name="first_name_empty"> الاسم الأول مطلوب.</string>
+    <string name="last_name_empty"> اسم العائلة مطلوب.</string>
+    <string name="mobile_number_empty"> رقم الهاتف مطلوب.</string>
+    <string name="save_picture" tools:ignore="UnusedResources"> حفظ</string>
+
+    <!--Show Dailog-->
+    <string name="connect_to_network"> الرجاء الاتصال بالشبكة أو الإنهاء</string>
+    <string name="connect_to_wifi">WIFI الرجاء الاتصال بـ  </string>
+    <string name="quit"> إنهاء</string>
+    <string name="cencel_request"> &service; هل أنت متأكد أنك تريد إلغاء الخدمة </string>
+
+
+    <!--settings-->
+    <string name="price"> السعر </string>
+    <string name="required"> هذا الحقل مطلوب</string>
+    <string name="price_title"> السعر</string>
+    <string name="menu_settings"> الإعدادات</string>
+    <string name="menu_home"> الصفحة الرئيسية</string>
+    <string name="profile2"> ملفي الشخصي</string>
+    <string name="menu_logout"> تسجيل الخروج</string>
+    <string name="menu_history">الجلسات</string>
+    <string name="menu_payment">المواد</string>
+    <string name="menu_contact_share"> مشاركة جهة الاتصال</string>
+    <string name="menu_share_to_contact"> مشاركة مع جهات الاتصال</string>
+    <string name="menu_share"> مشاركة</string>
+
+
+    <!--Nav Menu-->
+    <string name="drawer_open" tools:ignore="UnusedResources"> navigation_drawer_open </string>
+    <string name="drawer_close" tools:ignore="UnusedResources"> navigation_drawer_close </string>
+    <string name="menu_coupon" tools:ignore="UnusedResources"> القسيمة</string>
+    <string name="menu_wallet" tools:ignore="UnusedResources"> المحفظة</string>
+    <string name="waitingForApproval"> في انتظار التحقق من حسابك بواسطتنا.</string>
+
+    <!-- Coupon Fragment-->
+    <string name="enter_the_coupon" tools:ignore="UnusedResources"> أدخل رمز القسيمة</string>
+    <string name="add_coupon" tools:ignore="UnusedResources"> إضافة قسيمة</string>
+    <string name="choose_payment" tools:ignore="UnusedResources"> اختر طريقة الدفع</string>
+
+    <!--Common-->
+    <string name="request_tutor" tools:ignore="UnusedResources"> &service; طلب الخدمة</string>
+    <string name="enter_service_loc" tools:ignore="UnusedResources"> &service;
+        ادخل مكان الخدمة</string>
+    <string name="looking_for_providers" tools:ignore="UnusedResources">&provider; البحث عن مزود الخدمة الخاص بك</string>
+    <string name="call" tools:ignore="UnusedResources"> اتصال </string>
+    <string name="cancel_request" tools:ignore="UnusedResources"> إلغاء الطلب</string>
+    <string name="change" tools:ignore="UnusedResources"> تغيير</string>
+    <string name="True"> صحيح</string>
+    <string name="False"> خطأ</string>
+    <string name="field_required" tools:ignore="UnusedResources"> هذا الحقل مطلوب </string>
+    <string name="passwd_length"> يجب ألا تقل كلمة المرور عن 6 أحرف </string>
+    <string name="email"> البريد الإلكتروني</string>
+    <string name="name" tools:ignore="UnusedResources"> الاسم </string>
+    <string name="logout"> تسجيل الخروج</string>
+    <string name="exit_confirm"> هل أنت متأكد من أنك تريد تسجيل الخروج؟ </string>
+    <string name="yes"> نعم</string>
+    <string name="no"> لا</string>
+    <string name="carpendar" tools:ignore="UnusedResources"> نجار</string>
+    <string name="enter_service_location" tools:ignore="UnusedResources"> &service; ادخل مكان الخدمة
+</string>
+    <string name="empty_home_category" tools:ignore="UnusedResources"> &service; لم يتم ايجاد خبير بالخدمة</string>
+    <string name="submit"> إرسال</string>
+    <string name="pick_up_location" tools:ignore="UnusedResources"> إلى أين؟</string>
+    <string name="no_service" tools:ignore="UnusedResources">&services; لم يتم ايجاد</string>
+
+    <!--service flow-->
+    <string name="provider_accepted" tools:ignore="UnusedResources">بقبول طلبك &provider;
+        قام </string>
+    <string name="provider_arrived" tools:ignore="UnusedResources"> وصل الى موقعك &provider; </string>
+    <string name="provider_service" tools:ignore="UnusedResources">&service; استمتع ب </string>
+    <string name="sample_mail_id"> name@example.com </string>
+    <string name="password_txt"> ****** </string>
+
+    <!--Activity Email/Begin -->
+    <string name="whats_your_mail_address"> ما هو عنوان بريدك الإلكتروني؟</string>
+
+    <string name="get_moving_with_tutor_services" tools:ignore="UnusedResources"> TUTOR\'s &services;
+        تنقل مع المدرس </string>
+    <string name="FB_login_text"> Facebook تسجيل الدخول باستخدام </string>
+
+    <!--Activity Password -->
+    <string name="welcome_back" tools:ignore="UnusedResources"> مرحبًا بك مرة أخرى ، قم بتسجيل الدخول للمتابعة</string>
+    <string name="enter_your_password" tools:ignore="UnusedResources"> أدخل كلمة المرور الخاصة بك</string>
+    <string name="forget_password"> هل نسيت كلمة المرور؟</string>
+    <string name="forget_password_menu"> نسيت كلمة المرور</string>
+    <string name="i_need_to_create_an_account"> أحتاج إلى إنشاء حساب</string>
+
+    <!-- Activity ForgetPassword -->
+    <string name="recovery_password"> أدخل معرف البريد الخاص بك للاسترداد</string>
+    <string name="recovery_pwd"> أدخل بريدك الإلكتروني</string>
+
+
+    <!--Activity Register-->
+    <string name="phone_number"> رقم الهاتف</string>
+    <string name="password"> كلمة المرور</string>
+    <string name="first_name"> الاسم الأول</string>
+    <string name="last_name"> اسم العائلة</string>
+    <string name="mobile_no"> 9876543210 </string>
+    <string name="doc_details"> تفاصيل المستند</string>
+    <string name="view" translatable="false"> عرض</string>
+    <string name="update"> تحديث</string>
+    <string name="valid_image"> لم يتم العثور على صورة</string>
+    <string name="invalid_credentials"> اسم المستخدم وكلمة المرور غير صالحين.</string>
+
+
+    <!--Change Password-->
+    <string name="change_password_title"> تغيير كلمة المرور</string>
+    <string name="current_password"> كلمة المرور الحالية</string>
+    <string name="new_password"> كلمة مرور جديدة</string>
+    <string name="Confirm_password"> تأكيد كلمة المرور الجديدة</string>
+    <string name="please_enter_current_pass"> الرجاء إدخال كلمة المرور الحالية.</string>
+    <string name="please_enter_new_pass"> الرجاء إدخال كلمة المرور الجديدة.</string>
+    <string name="please_enter_confirm_pass"> الرجاء إدخال تأكيد كلمة المرور.</string>
+    <string name="different_passwords"> كلمة المرور غير متطابقة.</string>
+    <string name="current_and_new_passwords"> يجب ألا تكون كلمة المرور الحالية وكلمة المرور الجديدة متماثلتين.</string>
+    <string name="Commission" tools:ignore="UnusedResources"> العمولة</string>
+    <string name="password_Change_done"> تم تغيير كلمة المرور بنجاح .. يرجى تسجيل الدخول مرة أخرى للمتابعة ..</string>
+
+    <!--Your Trips-->
+    <string name="history"> السجل</string>
+    <string name="comments" tools:ignore="UnusedResources"> التعليقات</string>
+    <string name="no_trips"> &service; ليس لديك طلبات سابقة</string>
+    <string name="your_trips" tools:ignore="UnusedResources"> &service; طلبات لخدمتك</string>
+    <string name="upcoming">Upcoming</string>
+
+    <string name="no_upcoming"> ليس لديك خدمة &amp; قادمة ؛ طلبات</string>
+    <string name="past"> الماضي</string>
+
+    <!--Provider Accepted-->
+    <string name="sample_name"> محمد</string>
+    <string name="sample_service" tools:ignore="UnusedResources"> BMW </string>
+    <string name="call_btn" tools:ignore="UnusedResources"> اتصال</string>
+    <string name="cancell_trip" tools:ignore="UnusedResources"> إلغاء الطلب</string>
+    <string name="surge_pricing" tools:ignore="UnusedResources">&providers;نظرًا لساعات الذروة ، ستختلف الرسوم حسب توفرها من قبل مزودي الخدمة  </string>
+
+    <!-- Edit Activity-->
+    <string name="edit_profile" tools:ignore="UnusedResources"> تحرير الحساب</string>
+    <string name="change_password"> هل تبحث عن تغيير كلمة المرور؟</string>
+    <string name="save"> حفظ </string>
+    <string name="save_before" tools:ignore="UnusedResources"> التحميل والبدء والخدمة ؛ </string>
+    <string name="save_after">&service; رفع وإنهاء الخدمة </string>
+    <string name="update_success"> تم تحديث الملف الشخصي.</string>
+    <string name="sign_in"> تسجيل الدخول</string>
+    <string name="sign_up"> الاشتراك</string>
+    <string name="already_account"> هل لديك حساب بالفعل؟ انقر هنا لـ</string>
+    <string name="no_account"> أليس لديك حساب؟ </string>
+    <string name="here"> هنا</string>
+    <string name="Choose_service"> اختر &amp; service؛ your service؛ </string>
+    <string name="edit"> تحرير</string>
+    <string name="about"> حول</string>
+    <string name="about_us"> نبذة عنا</string>
+    <string name="contact_us"> اتصل بنا</string>
+    <!--))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+    يجب ترجمة ووتصحيح الاخطاء-->
+
+    <string name="write_something"> اكتب عرضك التقديمي هنا. بكلمات قليلة دع الطلاب يعرفون ما الذي يجب أن يوظفوك لأجله</string>
+    <string name="no_rides"> لا توجد خدمات</string>
+    <string name="target_completed">\ncompleted الهدف مكتمل</string>
+    <string name="earnings">الأرباح</string>
+    <string name="summary"> ملخص</string>
+    <string name="total_rides"> &services; العدد الاجمالي للخدمات</string>
+    <string name="revenue">الإيرادات</string>
+    <string name="schedule_rides"> &services;الجدول والخدمات</string>
+    <string name="canceled_rides"> &services;خدمات ملغيه</string>
+    <string name="help"> مساعده</string>
+    <string name="help_title"> TUTOR Pro تعليمات من</string>
+    <string name="help_msg"> contact\n فريقنا سيتصل بك قريبا</string>
+    <string name="time"> الوقت</string>
+    <string name="Distance" tools:ignore="UnusedResources"> المسافة</string>
+    <string name="amount"> المبلغ</string>
+    <string name="service"> &amp; service؛ </string>
+    <string name="إلغاء"> إلغاء</string>
+    <string name="total_amount"> المبلغ الإجمالي</string>
+    <string name="Confirm"> تأكيد</string>
+    <string name="click_resend"> إعادة إرسال رمز المرور</string>
+    <string name="cancel_confirm"> &service; هل أنت متأكد أنك تريد إلغاء</string>
+    <string name="call_confirm"> هل أنت متأكد أنك تريد إجراء مكالمة؟</string>
+    <string name="service_status">&service; الحالات</string>
+    <string name="service_type">&service; نوع الخدمة</string>
+    <string name="Schedule_date"> تاريخ الجدول</string>
+    <string name="service_location">&service; موقع الخدمه</string>
+    <string name="service_address">&servicecap; العنوان</string>
+    <string name="reject">رفض</string>
+    <string name="before_service"> &service;قبل الخدمه</string>
+    <string name="after_service"> &service; بعد الخدمه </string>
+    <string name="picture"> صورة</string>
+    <string name="no_mobile"> لا يتوفر رقم هاتف محمول</string>
+    <string name="digits" tools:ignore="UnusedResources"> abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ </string>
+    <string name="first_name_no_number"> الاسم الأول لا يقبل الأرقام</string>
+    <string name="last_name_no_number"> اسم العائلة لا يقبل الأرقام</string>
+    <string name="rate_provider_lbl"> &service; قيم خدمتك مع</string>
+    <string name="mobile_no_validation"> يجب أن يكون رقم الجوال بين 20 رقمًا</string>
+    <string name="exit_app_confirm"> هل أنت متأكد من أنك تريد الخروج؟</string>
+    <string name="exit" tools:ignore="UnusedResources"> خروج</string>
+    <string name="hello_team" tools:ignore="UnusedResources"> مرحبًا بالفريق</string>
+    <string name="email_help" tools:ignore="UnusedResources"> هذا هو معرف البريد الإلكتروني الخاص بي:</string>
+    <string name="session_timeout"> يرجى تسجيل الدخول / تسجيل الدخول للمتابعة</string>
+    <string name="Accept"> قبول </string>
+
+    <!--Chat-->
+    <string name="username"> محادثه</string>
+    <string name="login"> تسجيل الدخول</string>
+    <string name="default_input_hint"> اكتب رسالتك</string>
+    <string name="chat">محادثه </string>
+    <string name="chat_name"> %1$s محادثه مع </string>
+    <string name="sub_service_type"> فصل</string>
+    <string name="Choose_sub_service_type"> اختر جلستك</string>
+    <string name="session"> الجلسات</string>
+
+    <string name="msg_count">    رسائل جديده %1$d لديك</string>
+    <string name="desc"> الوصف </string>
+
+<!--
+    <! &#45;&#45; TODO: إزالة أو تغيير نص العنصر النائب هذا ->
+-->
+    <string name="hello_blank_fragment"> مرحبا قطعة فارغة</string>
+    <string name="no_contacts"> لم يتم العثور على جهات اتصال</string>
+    <string name="skip"> تخطي تسجيل الدخول</string>
+    <string name="contact_permission_msg">  Cultor يتطلب تطبيق الوصول إلى جهات الاتصال لمشاركة الرابط الخاص بك بسهولة أكبر</string>
+    <string name="enter_service_type"> أدخل الخدمة التي تريدها</string>
+    <string name="share_update_success"> تمت المشاركة بنجاح</string>
+    <string name="choose_language">اختر اللغة</string>
+    <string name="english">English</string>
+    <string name="arabic">عربى</string>
+    <string name="language">اللغة</string>
+
+</resources>

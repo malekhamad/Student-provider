@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE
+    resources
+    [<!ENTITY appname "A Student (Tutors) "><!ENTITY provider "A Student"><!ENTITY providers "A Student"><!ENTITY service "Subject"><!ENTITY services "Subjects"><!ENTITY servicecap "SUBJECTS"><!ENTITY user "User">]>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Application Name-->
+    <string name="app_name">&appname;</string>
+
+    <!--Google map-->
+    <string name="google_map_api">AIzaSyAlPnLKA7wxbZXaSUUCncI8QZb-iAKc7C4</string>
+    <string name="facebook_app_id" translatable="false">257584141974462</string>
+    <string name="fb_login_protocol_scheme">fb257584141974462</string>
+
+    <string name="fb_cancel">Facebook login cancelled</string>
+    <string name="fb_error">Facebook login failed</string>
+
+    <string name="facebook_name">Facebook</string>
+
+    <!--Flow status -->
+    <string name="tap_when_arrived">Tap when arrived</string>
+    <string name="tap_when_pickedup">Check in</string>
+    <string name="tap_when_dropped">Check out</string>
+    <string name="tap_when_paid">Confirm payment</string>
+    <string name="cancel_ride" tools:ignore="UnusedResources">Cancel request</string>
+    <string name="rate_user">Submit</string>
+
+    <!--Invoice-->
+    <string name="invoice">Invoice</string>
+    <string name="base_fare">Base fare</string>
+    <string name="tax_fare">Tax fare</string>
+    <string name="hourly_fare">Hourly fare</string>
+    <string name="cities">Cities</string>
+    <string name="legal">Legal</string>
+    <string name="revolution">Join the job revolution</string>
+    <string name="wallet_detection">Wallet Detection</string>
+    <string name="promotion_applied">Commission</string>
+    <string name="total">Total</string>
+    <string name="payable_amount">Amount to be paid</string>
+    <string name="amount_to_be_paid">Amount to be paid</string>
+    <string name="sample_base_price">$0</string>
+    <string name="time_consumed">Time\nconsumed</string>
+    <string name="service_photo" tools:ignore="UnusedResources">&service; Photo</string>
+    <string name="selected_payment_mode">Cash</string>
+    <string name="pay_now">Confirm Payment</string>
+    <string name="payment_methods" tools:ignore="UnusedResources">Payment Methods</string>
+    <string name="write_your_comment">Write your comments</string>
+    <string name="no_comments">No Comments Available</string>
+    <string name="rate_provider" tools:ignore="UnusedResources">Rate your &service; with</string>
+    <string name="start_service">Upload and Start &service;</string>
+    <string name="end_service">Upload and End &service;</string>
+    <string name="services_requested">&services; Requested</string>
+    <string name="profile">Profile</string>
+
+
+    <!--Offline Online -->
+    <string name="go_online">GO ONLINE</string>
+    <string name="go_offline">GO OFFLINE</string>
+
+    <!-- Error Messages-->
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="services_updated">&services; updated successfully!</string>
+    <string name="something_went_wrong_net">Something went wrong, please check internet connection.</string>
+    <string name="oops_connect_your_internet">Oops! Connect your Internet.</string>
+    <string name="server_down">Unable to reach the server.</string>
+    <string name="please_try_again">Please try again.</string>
+    <string name="email_validation">Enter your email.</string>
+    <string name="not_valid_email" tools:ignore="UnusedResources">Not a valid email.</string>
+    <string name="password_validation">Password can not be left empty.</string>
+    <string name="password_validation2">Password must contain atleast 1 Uppercase, 1 Lowercase, 1 Number and 1 Special Character</string>
+    <string name="first_name_empty">First name required.</string>
+    <string name="last_name_empty">Last name required.</string>
+    <string name="mobile_number_empty">Phone number required.</string>
+    <string name="save_picture" tools:ignore="UnusedResources">Save</string>
+
+    <!--Show Dailog-->
+    <string name="connect_to_network">Please connect to network or quit</string>
+    <string name="connect_to_wifi">Please connect to WIFI</string>
+    <string name="quit">Quit</string>
+    <string name="cencel_request">Are you sure you want to cancel the &service; request?</string>
+
+    <!--settings-->
+    <string name="price">price</string>
+    <string name="required">This field is required</string>
+    <string name="price_title">Price</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="profile2">My Profile</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_history">Sessions</string>
+    <string name="menu_payment">Subjects</string>
+    <string name="menu_contact_share">Contact Share</string>
+    <string name="menu_share_to_contact">Share to contacts</string>
+    <string name="menu_share">Share</string>
+
+
+    <!--Nav Menu-->
+    <string name="drawer_open" tools:ignore="UnusedResources">navigation_drawer_open</string>
+    <string name="drawer_close" tools:ignore="UnusedResources">navigation_drawer_close</string>
+    <string name="menu_coupon" tools:ignore="UnusedResources">Coupon</string>
+    <string name="menu_wallet" tools:ignore="UnusedResources">Wallet</string>
+    <string name="waitingForApproval">Waiting for your account to be verified by our authority.</string>
+
+    <!-- Coupon Fragment-->
+    <string name="enter_the_coupon" tools:ignore="UnusedResources">Enter the coupon code</string>
+    <string name="add_coupon" tools:ignore="UnusedResources">ADD COUPON</string>
+    <string name="choose_payment" tools:ignore="UnusedResources">Choose payment method</string>
+
+    <!--Common-->
+    <string name="request_tutor" tools:ignore="UnusedResources">Request &service;</string>
+    <string name="enter_service_loc" tools:ignore="UnusedResources">Enter &service; location</string>
+    <string name="looking_for_providers" tools:ignore="UnusedResources">Looking for your &provider;</string>
+    <string name="call" tools:ignore="UnusedResources">Call</string>
+    <string name="cancel_request" tools:ignore="UnusedResources">Cancel Request</string>
+    <string name="change" tools:ignore="UnusedResources">Change</string>
+    <string name="True">true</string>
+    <string name="False">false</string>
+    <string name="field_required" tools:ignore="UnusedResources">This field is required</string>
+    <string name="passwd_length">Password must be minimum 6 characters</string>
+    <string name="email">Email</string>
+    <string name="name" tools:ignore="UnusedResources">Name</string>
+    <string name="logout">Logout</string>
+    <string name="exit_confirm">Are you sure want to logout?</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="carpendar" tools:ignore="UnusedResources">Carpendar</string>
+    <string name="enter_service_location" tools:ignore="UnusedResources">Please enter your &service;
+        location</string>
+    <string name="empty_home_category" tools:ignore="UnusedResources">No &service; expert found</string>
+    <string name="submit">Submit</string>
+    <string name="pick_up_location" tools:ignore="UnusedResources">Where to?</string>
+    <string name="no_service" tools:ignore="UnusedResources">No &services; found.</string>
+
+    <!--service flow-->
+    <string name="provider_accepted" tools:ignore="UnusedResources">&provider; has accepted your request</string>
+    <string name="provider_arrived" tools:ignore="UnusedResources">&provider; has arrived to your location</string>
+    <string name="provider_service" tools:ignore="UnusedResources">Enjoy your &service;</string>
+    <string name="sample_mail_id">name@example.com</string>
+    <string name="password_txt">******</string>
+
+    <!--Activity Email/Begin -->
+    <string name="whats_your_mail_address">What\'s your email address?</string>
+    <string name="get_moving_with_tutor_services" tools:ignore="UnusedResources">Get moving with TUTOR\'s &services;</string>
+    <string name="enter_your_mail_id" tools:ignore="UnusedResources">Enter your mail ID</string>
+    <string name="FB_login_text">Log in with Facebook</string>
+
+    <!--Activity Password -->
+    <string name="welcome_back" tools:ignore="UnusedResources">Welcome back, sign in to continue </string>
+    <string name="enter_your_password" tools:ignore="UnusedResources">Enter your password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="forgot_password_menu">Forgot password</string>
+    <string name="i_need_to_create_an_account">I need to create an account</string>
+
+    <!-- Activity ForgetPassword -->
+    <string name="recover_password">Enter your mail ID for recovery</string>
+    <string name="recover_pwd">Enter your email</string>
+
+
+    <!--Activity Register-->
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="mobile_no">9876543210</string>
+    <string name="doc_details">Document Details</string>
+    <string name="video_details">Video Profile</string>
+    <string name="video_edit">Edit Video</string>
+    <string name="uploadfile">Upload Your File Here</string>
+    <string name="view" translatable="false">View</string>
+    <string name="update">Update</string>
+    <string name="valid_image">No image found</string>
+    <string name="invalid_credentials">Invalid Username and Password.</string>
+
+
+    <!--Change Password-->
+    <string name="change_password_title">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm New Password</string>
+    <string name="please_enter_current_pass">Please enter current password.</string>
+    <string name="please_enter_new_pass">Please enter new password.</string>
+    <string name="please_enter_confirm_pass">Please enter confirmation password.</string>
+    <string name="different_passwords">Password doesn\'t match.</string>
+    <string name="current_and_new_passwords">Current Password and New Password should not be the same.</string>
+    <string name="commission" tools:ignore="UnusedResources">Commission</string>
+    <string name="password_Change_done">Password changed successfully.. Please login again to continue..</string>
+
+    <!--Your Trips-->
+    <string name="history">History</string>
+    <string name="comments" tools:ignore="UnusedResources">Comments</string>
+    <string name="no_trips">You have no past &service; requests</string>
+    <string name="your_trips" tools:ignore="UnusedResources">Your &service; Requests</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="no_upcoming">You have no upcoming &service; requests</string>
+    <string name="past">Past</string>
+
+    <!--Provider Accepted-->
+    <string name="sample_name">Will Smith</string>
+    <string name="sample_service" tools:ignore="UnusedResources">BMW</string>
+    <string name="call_btn" tools:ignore="UnusedResources">Call</string>
+    <string name="cancel_trip" tools:ignore="UnusedResources">Cancel Request</string>
+    <string name="surge_pricing" tools:ignore="UnusedResources">Due to peak hours, charges will vary based on availability of &providers;.</string>
+
+    <!-- Edit Activity-->
+    <string name="edit_profile" tools:ignore="UnusedResources">Edit Account</string>
+    <string name="change_password">Looking to change password?</string>
+    <string name="save">Save</string>
+    <string name="save_before" tools:ignore="UnusedResources">Upload and Start &service;</string>
+    <string name="save_after">Upload and End &service;</string>
+    <string name="update_success">Profile Updated.</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="already_account">Already have an account? Click here to </string>
+    <string name="no_account">Don\'t have an account? </string>
+    <string name="here">here</string>
+    <string name="choose_service">Choose your &service;</string>
+    <string name="edit">Edit</string>
+    <string name="about">About</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+
+    <string name="write_something">write your pitch here. In few words let the students know what they should hire you</string>
+    <string name="no_rides">No services</string>
+    <string name="target_completed">Target\ncompleted</string>
+    <string name="earnings">Earnings</string>
+    <string name="summary">Summary</string>
+    <string name="total_rides">Total No.of &services;</string>
+    <string name="revenue">Revenue</string>
+    <string name="schedule_rides">Schedule &services;</string>
+    <string name="canceled_rides">Cancelled &services;</string>
+    <string name="help">Help</string>
+    <string name="help_title">TUTOR Pro help</string>
+    <string name="help_msg">Our team will contact\n you soon!</string>
+    <string name="time">Time</string>
+    <string name="distance" tools:ignore="UnusedResources">Distance</string>
+    <string name="amount">Amount</string>
+    <string name="service">&service;</string>
+    <string name="cancel">Cancel</string>
+    <string name="total_amount">Total amount</string>
+    <string name="confirm">Confirm</string>
+    <string name="click_resend">Resend Passcode</string>
+    <string name="cancel_confirm">Are you sure you want to cancel the &service;?</string>
+    <string name="call_confirm">Are you sure you want to make a call?</string>
+    <string name="service_status">&service; status</string>
+    <string name="service_type">&service; type</string>
+    <string name="schedule_date">Schedule date</string>
+    <string name="service_location">&service; Location</string>
+    <string name="service_address">&servicecap; ADDRESS</string>
+    <string name="reject">Reject</string>
+    <string name="before_service">Before &service;</string>
+    <string name="after_service">After &service;</string>
+    <string name="picture">Picture</string>
+    <string name="no_mobile">No mobile number available</string>
+    <string name="digits" tools:ignore="UnusedResources">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="first_name_no_number">First name not accept numbers</string>
+    <string name="last_name_no_number">Last name do not accept numbers</string>
+    <string name="rate_provider_lbl">Rate your &service; with</string>
+    <string name="mobile_no_validation">Mobile number must between 20 digits</string>
+    <string name="exit_app_confirm">Are you sure want to exit?</string>
+    <string name="exit" tools:ignore="UnusedResources">Exit</string>
+    <string name="hello_team" tools:ignore="UnusedResources">Hello team</string>
+    <string name="email_help" tools:ignore="UnusedResources">This is my email id : </string>
+    <string name="session_timeout">Please login/signin to continue</string>
+    <string name="accept">Accept</string>
+
+    <!--Chat-->
+    <string name="username">Cultor chat</string>
+    <string name="login">Login</string>
+    <string name="default_input_hint">Type your message</string>
+    <string name="chat">Chat</string>
+    <string name="chat_name">Chat with %1$s</string>
+    <string name="sub_service_type">Chapter</string>
+    <string name="Choose_sub_service_type">Choose your session</string>
+    <string name="session">Sessions</string>
+
+    <string name="msg_count">You have %1$d new messages</string>
+    <string name="desc">Description</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_contacts">No contacts found</string>
+    <string name="skip">Skip login</string>
+    <string name="contact_permission_msg">Cultor application requires Contacts access to share your link more easily.</string>
+    <string name="enter_service_type">Enter service you want</string>
+    <string name="share_update_success">Shared successfully</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="language">Change Language</string>
+
+</resources>
