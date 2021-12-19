@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
     Document updatedDocument;
     int position = -1;
     ArrayList<Document> documentArrayList;
-    ArrayList<String> uriImageList = new ArrayList<>() ;
+    ArrayList<String> uriImageList = new ArrayList<>();
     RegisterDocAdapter documentAdapter;
     private static final int SELECT_PHOTO = 100;
     Boolean isPermissionGivenAlready = false;
@@ -438,11 +438,24 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
             VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, URLHelper.REGISTER, new Response.Listener<NetworkResponse>() {
                 @Override
                 public void onResponse(NetworkResponse response) {
-                    customDialog.dismiss();
-                    utils.print("SignInResponse", response.toString());
-                    SharedHelper.putKey(RegisterActivity.this, "email", email.getText().toString());
-                    SharedHelper.putKey(RegisterActivity.this, "password", password.getText().toString());
-                    signIn();
+                    try {
+                        JSONObject mJSONObject=new JSONObject(new String(response.data));
+
+
+                        if(mJSONObject.opt("error") != null){
+                            displayMessage(mJSONObject.optString("error"));
+                            return;
+                        }
+
+                        customDialog.dismiss();
+                        utils.print("SignInResponse", response.toString());
+                        SharedHelper.putKey(RegisterActivity.this, "email", email.getText().toString());
+                        SharedHelper.putKey(RegisterActivity.this, "password", password.getText().toString());
+                        signIn();
+                    }catch(Exception exception){
+                        displayMessage(exception.getMessage());
+                    }
+
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -508,14 +521,14 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
                     Map<String, String> object = new HashMap<>();
                     Log.e("getParams", "..");
                     try {
-                        object.put("device_type","android");
-                        object.put("device_id",device_UDID);
-                        object.put("device_token","" + device_token);
-                        object.put("login_by","manual");
-                        object.put("first_name",first_name.getText().toString());
-                        object.put("role_id","1");
-                        object.put("last_name",last_name.getText().toString());
-                        object.put("email",email.getText().toString());
+                        object.put("device_type", "android");
+                        object.put("device_id", device_UDID);
+                        object.put("device_token", "" + device_token);
+                        object.put("login_by", "manual");
+                        object.put("first_name", first_name.getText().toString());
+                        object.put("role_id", "1");
+                        object.put("last_name", last_name.getText().toString());
+                        object.put("email", email.getText().toString());
                         object.put("password", password.getText().toString());
                         object.put("password_confirmation", password.getText().toString());
                         object.put("mobile", countryNumber.getText().toString() + mobile_no.getText().toString());
@@ -547,31 +560,34 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
                     return object;
                 }
 
-              /*  @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    HashMap<String, String> headers = new HashMap<String, String>();
-//                    headers.put("X-Requested-With", "XMLHttpRequest");
-                    headers.put("Content-Type", "multipart/form-data");
-                    //headers.put("Authorization", "Bearer " + SharedHelper.getKey(context, "access_token"));
-                    return headers;
-                }*/
-
                 @Override
                 protected Map<String, VolleyMultipartRequest.DataPart> getByteData() throws AuthFailureError {
                     Map<String, VolleyMultipartRequest.DataPart> params = new HashMap<>();
                     Log.i("getByteData", "..");
-                    for (Document document : documentAdapter.getServiceListModel()) {
-                        if (document.getBitmap() != null) {
-                            String photo = "photos";
-                            params.put(photo, new VolleyMultipartRequest.DataPart("d"+System.currentTimeMillis()+".jpg", AppHelper.getFileDataFromDrawable(document.getBitmap()), "image/jpeg"));
+
+                    for(int i =0 ; i < documentAdapter.getServiceListModel().size() ; i++) {
+                        Document mDocument = documentAdapter.getServiceListModel().get(i);
+                        if (i == 0) {
+                            if (mDocument.getBitmap() != null) {
+                                String photo = "photos";
+                                params.put(photo, new VolleyMultipartRequest.DataPart("identity_card" + System.currentTimeMillis() + ".jpg", AppHelper.getFileDataFromDrawable(mDocument.getBitmap()), "image/jpeg"));
+                            }
+                        } else {
+                            if (mDocument.getBitmap() != null) {
+                                String photo = "criminal_certification_image";
+                                params.put(photo, new VolleyMultipartRequest.DataPart("criminal_certification_id" + System.currentTimeMillis() + ".jpg", AppHelper.getFileDataFromDrawable(mDocument.getBitmap()), "image/jpeg"));
+                            }
                         }
                     }
-                    /*final File myVideo = new File(selectedVideoPath);
-                    try {
+
+                   /* if (selectedVideoPath != null) {
+                        final File myVideo = new File(selectedVideoPath);
+                        try {
 //                        params.put("video_data", new DataPart(myVideo.getName() + ".mp4", loadFile(myVideo)));
-                        params.put("video_data", new DataPart(myVideo.getName(), loadFile(myVideo)));
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                            params.put("video_data", new DataPart(myVideo.getName(), loadFile(myVideo)));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }*/
                     return params;
                 }
@@ -963,6 +979,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
                     SharedHelper.putKey(context, "access_token", response.optString("access_token"));
                     SharedHelper.putKey(context, "refresh_token", response.optString("refresh_token"));
                     SharedHelper.putKey(context, "token_type", response.optString("token_type"));
+                    SharedHelper.putKey(context, "status",response.optString("status"));
+
                     getProfile();
                 }
             }, new Response.ErrorListener() {

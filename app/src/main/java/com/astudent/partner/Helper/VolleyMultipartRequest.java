@@ -8,6 +8,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 
+import org.json.JSONObject;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -57,6 +59,7 @@ public class VolleyMultipartRequest extends Request<NetworkResponse> {
         this.mListener = listener;
         this.mErrorListener = errorListener;
     }
+
 
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {

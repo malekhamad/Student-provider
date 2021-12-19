@@ -199,7 +199,7 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
     CountDownTimer countDownTimer;
     CustomDialog customDialog;
     String source_lat = "", source_lng = "", source_address = "", dest_lat = "", dest_lng = "", dest_address = "";
-    String crt_lat = "", crt_lng = "";
+    String crt_lat = "356565.25", crt_lng = "3996.2548";
     String mCurrentPhotoPath = "", strServiceType = "";
     File mFileBefore, mFileAfter;
     Double crtLat, crtLng;
@@ -1638,6 +1638,10 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
     }
 
     private void update(final String status, String id) {
+    /*    if(!SharedHelper.getKey(getActivity(),"status").equals("approved")){
+            Toast.makeText(getActivity(), "Your Account Not Approved Yet!", Toast.LENGTH_SHORT).show();
+            return;
+        }*/
         customDialog = new CustomDialog(context);
         customDialog.setCancelable(false);
         customDialog.show();
@@ -1654,6 +1658,11 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
                     Log.e(TAG, "onResponse: " + response);
                     customDialog.dismiss();
                     if (response != null) {
+                        if(response.optJSONObject("error") != null){
+                                Toast.makeText(getActivity(), "Your Account Not Approved Yet!", Toast.LENGTH_SHORT).show();
+                                return;
+
+                        }
                         if (response.optJSONObject("service").optString("status").equalsIgnoreCase("offline")) {
                             Toast.makeText(context, "You are now offline!", Toast.LENGTH_SHORT).show();
                             goOffline();
@@ -1673,7 +1682,7 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
                 @Override
                 public java.util.Map<String, String> getHeaders() throws AuthFailureError {
                     HashMap<String, String> headers = new HashMap<>();
-                    headers.put("X-Requested-With", "XMLHttpRequest");
+//                    headers.put("X-Requested-With", "XMLHttpRequest");
                     headers.put("Authorization", "Bearer " + token);
                     return headers;
                 }
@@ -3155,9 +3164,15 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
                         showGuestDialog().show();
                     } else {
                         if (btnGoOffline.getText().toString().equalsIgnoreCase(getString(R.string.go_offline))) {
+                            if (handleCheckStatus != null) {
+                                handleCheckStatus.removeCallbacksAndMessages(null);
+                            }
                             CurrentStatus = "ONLINE";
                             update(CurrentStatus, request_id);
                         } else {
+                            if (handleCheckStatus != null) {
+                            startCheckStatus();
+                            }
                             goOnline();
                         }
                     }

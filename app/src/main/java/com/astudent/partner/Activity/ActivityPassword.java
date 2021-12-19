@@ -383,6 +383,7 @@ public class ActivityPassword extends AppCompatActivity {
                     SharedHelper.putKey(context, "picture", AppHelper.getImageUrl(response.optString("picture")));
                     SharedHelper.putKey(context, "gender", response.optString("gender"));
                     SharedHelper.putKey(context, "mobile", response.optString("mobile"));
+                    SharedHelper.putKey(context, "status",response.optString("status"));
                     SharedHelper.putKey(context, "description", response.optString("description"));
                     SharedHelper.putKey(context, "wallet_balance", response.optString("wallet_balance"));
                     SharedHelper.putKey(context, "payment_mode", response.optString("payment_mode"));
@@ -569,6 +570,8 @@ public class ActivityPassword extends AppCompatActivity {
                     SharedHelper.putKey(context, "access_token", response.optString("access_token"));
                     SharedHelper.putKey(context, "refresh_token", response.optString("refresh_token"));
                     SharedHelper.putKey(context, "token_type", response.optString("token_type"));
+                    SharedHelper.putKey(context, "status",response.optString("status"));
+
                     getProfile();
 
 

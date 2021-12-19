@@ -213,6 +213,7 @@ public class SplashScreen extends AppCompatActivity {
                 SharedHelper.putKey(context, "access_token", response.optString("access_token"));
                 SharedHelper.putKey(context, "refresh_token", response.optString("refresh_token"));
                 SharedHelper.putKey(context, "token_type", response.optString("token_type"));
+                SharedHelper.putKey(context, "status",response.optString("status"));
                 getProfile();
 
 
