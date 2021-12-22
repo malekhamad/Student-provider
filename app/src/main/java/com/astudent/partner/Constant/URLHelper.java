@@ -10,7 +10,7 @@ public class URLHelper {
     //Help
     public static final String HELP_REDIRECT_URL = BASE_URL + "";
     //Image load options URL
-    public static final String BASE_IMAGE_LOAD_URL_WITH_STORAGE = BASE_URL +"/storage/";
+    public static final String BASE_IMAGE_LOAD_URL_WITH_STORAGE = BASE_URL +"/";
     //WEB API LIST
     public static final String LOGIN = BASE_URL + "/api/provider/oauth/token";
     public static final String FACEBOOK_LOGIN = BASE_URL +"/api/provider/auth/facebook";
