@@ -225,7 +225,7 @@
 
     <string name="write_something"> اكتب عرضك التقديمي هنا. بكلمات قليلة دع الطلاب يعرفون ما الذي يجب أن يوظفوك لأجله</string>
     <string name="no_rides"> لا توجد خدمات</string>
-    <string name="target_completed">\ncompleted الهدف مكتمل</string>
+    <string name="target_completed"> الهدف مكتمل</string>
     <string name="earnings">الأرباح</string>
     <string name="summary"> ملخص</string>
     <string name="total_rides"> &services; العدد الاجمالي للخدمات</string>

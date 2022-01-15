@@ -440,6 +440,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
                 public void onResponse(NetworkResponse response) {
                     try {
                         JSONObject mJSONObject=new JSONObject(new String(response.data));
+                        customDialog.dismiss();
 
 
                         if(mJSONObject.opt("error") != null){
@@ -447,7 +448,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterDocAd
                             return;
                         }
 
-                        customDialog.dismiss();
                         utils.print("SignInResponse", response.toString());
                         SharedHelper.putKey(RegisterActivity.this, "email", email.getText().toString());
                         SharedHelper.putKey(RegisterActivity.this, "password", password.getText().toString());

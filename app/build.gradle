@@ -5,9 +5,9 @@ android {
         applicationId "com.astudent.partner"
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 3
+        versionCode 4
         vectorDrawables.useSupportLibrary = true
-        versionName "1.2"
+        versionName "1.2.2"
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
