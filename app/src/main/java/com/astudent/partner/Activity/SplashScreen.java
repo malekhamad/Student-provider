@@ -112,10 +112,10 @@ public class SplashScreen extends AppCompatActivity {
                     }
                 } else {
                     showDialog();
-                    handleCheckStatus.postDelayed(this, 3000);
+                    handleCheckStatus.postDelayed(this, 15000);
                 }
             }
-        }, 3000);
+        }, 15000);
 
 
     }

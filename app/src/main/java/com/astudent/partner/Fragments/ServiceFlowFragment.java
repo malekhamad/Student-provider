@@ -1000,9 +1000,9 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
                 } else {
                     showDialog();
                 }
-                handleCheckStatus.postDelayed(this, 3000);
+                handleCheckStatus.postDelayed(this, 15000);
             }
-        }, 3000);
+        }, 15000);
     }
 
     // Service Flow Layout changes
@@ -1612,10 +1612,10 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
                         //call function
                         if (!SharedHelper.getKey(getContext(), Utilities.skip_login).equalsIgnoreCase(Utilities.skipped)) {
                             checkStatus();
-                            handleCheckStatus.postDelayed(this, 3000);
+                            handleCheckStatus.postDelayed(this, 15000);
                         }
                     }
-                }, 3000);
+                }, 15000);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -2340,7 +2340,7 @@ public class ServiceFlowFragment extends Fragment implements OnMapReadyCallback,
     }
 
     public void goOffline() {
-        btnGoOffline.setText(getString(R.string.go_online));
+        btnGoOffline.setText(getActivity().getString(R.string.go_online));
         offlineImg.setVisibility(View.VISIBLE);
         offlineLayout.setVisibility(View.VISIBLE);
         imgCurrentLocation.setVisibility(View.GONE);
