@@ -9,6 +9,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
@@ -37,6 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         value++;
+        RemoteMessage message = remoteMessage ;
         if (remoteMessage.getData() != null) {
             utils.print(TAG, "From: " + remoteMessage.getFrom());
             utils.print(TAG, "Notification Message Body: " + remoteMessage.getData());
@@ -48,7 +50,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     sendChatNotification(remoteMessage.getData().get("message"));
                 }
             }else {
-                sendNotification(remoteMessage.getData().get("message"));
+                if(message.getData().get("status") != null && Utilities.isAppIsInBackground(getApplicationContext())){
+                    if(remoteMessage.getData().get("status").equals("request")){
+                        sendRequestNotification();
+                    }
+                }else {
+                    sendNotification(remoteMessage.getData().get("message"));
+                }
             }
         } else {
             utils.print(TAG, "FCM Notification failed");
@@ -141,6 +149,42 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 notificationManager.notify(0, notificationBuilder.build());
             }
         }
+    }
+
+    private void sendRequestNotification() {
+
+            // app is in background, show the notification in notification tray
+                Intent intent = new Intent(this, Home.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
+                        PendingIntent.FLAG_ONE_SHOT);
+                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,"request_id")
+                        .setContentTitle(getString(R.string.app_name))
+                        .setContentText("New Incoming Request")
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText("New Incoming Request"))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setAutoCancel(true)
+                        .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+                        .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.alert_tone))
+                        .setContentIntent(pendingIntent);
+                notificationBuilder.setSmallIcon(getNotificationIcon(notificationBuilder), 1);
+                NotificationManager notificationManager =
+                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    AudioAttributes attributes = new AudioAttributes.Builder()
+                            .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                            .build();
+                    NotificationChannel channel = new NotificationChannel("request_id",
+                            "request_notification",
+                            NotificationManager.IMPORTANCE_DEFAULT);
+                    channel.enableLights(true);
+                    channel.enableVibration(true);
+                    channel.setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.alert_tone),attributes);
+                    notificationManager.createNotificationChannel(channel);
+                }
+                notificationManager.notify(0, notificationBuilder.build());
+
+
     }
     //This method is only generating push notification
     //It is same as we did in earlier posts
