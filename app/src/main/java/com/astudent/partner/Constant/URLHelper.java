@@ -40,6 +40,7 @@ public class URLHelper {
     public static final String CONTACT_Us = BASE_URL + "/contactus";
     public static final String GET_DOC = BASE_URL + "/api/provider/document/types";
     public static final String SHARE_TO_CONTACT = BASE_URL + "/api/provider/share";
+    public static final String SEND_LANGUAGE = BASE_URL+"/api/provider/language/change";
 
 
 

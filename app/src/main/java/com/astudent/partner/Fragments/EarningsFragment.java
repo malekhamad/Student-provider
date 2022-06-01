@@ -335,8 +335,12 @@ public class EarningsFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                holder.lblDistance.setText(jsonObject.optJSONObject("service_type").optString("name"));
-                holder.lblAmount.setText(SharedHelper.getKey(context, "currency") + jsonArray.getJSONObject(position).getJSONObject("payment").optString("total"));
+                if(jsonObject.optJSONObject("service_type") != null){
+                    holder.lblDistance.setText(jsonObject.optJSONObject("service_type").optString("name"));
+                }
+                if(jsonArray.getJSONObject(position).getJSONObject("payment")!= null){
+                    holder.lblAmount.setText(SharedHelper.getKey(context, "currency") + jsonArray.getJSONObject(position).getJSONObject("payment").optString("total"));
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
